@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "grownupsavior/App";
+import App from "fadedgold/App";
 import reportWebVitals from "./reportWebVitals";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
 import { BrowserRouter } from "react-router-dom";
