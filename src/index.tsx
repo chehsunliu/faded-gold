@@ -4,6 +4,7 @@ import App from "fadedgold/App";
 import reportWebVitals from "./reportWebVitals";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
 import { BrowserRouter } from "react-router-dom";
+import "fadedgold/i18n";
 
 initializeIcons();
 

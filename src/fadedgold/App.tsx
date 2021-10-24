@@ -1,9 +1,9 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, Suspense } from "react";
 import { IStackTokens, Stack } from "@fluentui/react";
 import { NavMenu } from "fadedgold/NavMenu";
 import { Route, Routes } from "react-router-dom";
-import { SWD2E } from "fadedgold/games/swd2e/SWD2E";
-import { SWD3E } from "fadedgold/games/swd3e/SWD3E";
+import { SWD2E } from "fadedgold/games/swd2e";
+import { SWD3E } from "fadedgold/games/swd3e";
 
 const themedMediumStackTokens: IStackTokens = {
   childrenGap: "m",
@@ -15,6 +15,8 @@ const routeProps: { [key: string]: ReactElement<any, any> } = {
   "/games/swd2e": <SWD2E />,
   "/games/swd3e": <SWD3E />,
 };
+
+const Loading = () => <div>Loading...</div>;
 
 function App() {
   const routes = Object.entries(routeProps).map(([path, element]) => (
@@ -28,7 +30,9 @@ function App() {
           <NavMenu />
         </Stack>
         <Stack tokens={themedMediumStackTokens}>
-          <Routes>{routes}</Routes>
+          <Suspense fallback={<Loading />}>
+            <Routes>{routes}</Routes>
+          </Suspense>
         </Stack>
       </Stack>
     </>
