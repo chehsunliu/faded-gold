@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "grownupsavior/test-utils";
 import App from "grownupsavior/App";
 
 test("renders 123", () => {
