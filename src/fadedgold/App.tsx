@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, Suspense } from "react";
 import { IStackTokens, Stack } from "@fluentui/react";
 import { NavMenu } from "fadedgold/NavMenu";
 import { Route, Routes } from "react-router-dom";
@@ -16,13 +16,15 @@ const routeProps: { [key: string]: ReactElement<any, any> } = {
   "/games/swd3e": <SWD3E />,
 };
 
+const Loading = () => <div>Loading...</div>
+
 function App() {
   const routes = Object.entries(routeProps).map(([path, element]) => (
     <Route key={path} path={path} element={element} />
   ));
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Stack horizontal disableShrink>
         <Stack tokens={themedMediumStackTokens}>
           <NavMenu />
@@ -31,7 +33,7 @@ function App() {
           <Routes>{routes}</Routes>
         </Stack>
       </Stack>
-    </>
+    </Suspense>
   );
 }
 

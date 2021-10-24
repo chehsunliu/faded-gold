@@ -1,3 +1,10 @@
+import { useTranslation } from "react-i18next";
+
 export function SWD3E() {
-  return <div>SWD3E</div>;
+  const { t } = useTranslation("swd3e");
+  return (
+    <div>
+      <h1>{t("title")}</h1>
+    </div>
+  );
 }
