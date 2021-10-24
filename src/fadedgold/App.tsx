@@ -24,16 +24,18 @@ function App() {
   ));
 
   return (
-    <Suspense fallback={<Loading />}>
+    <>
       <Stack horizontal disableShrink>
         <Stack tokens={themedMediumStackTokens}>
           <NavMenu />
         </Stack>
         <Stack tokens={themedMediumStackTokens}>
-          <Routes>{routes}</Routes>
+          <Suspense fallback={<Loading />}>
+            <Routes>{routes}</Routes>
+          </Suspense>
         </Stack>
       </Stack>
-    </Suspense>
+    </>
   );
 }
 
