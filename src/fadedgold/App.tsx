@@ -1,9 +1,9 @@
 import React, { ReactElement } from "react";
 import { IStackTokens, Stack } from "@fluentui/react";
-import { NavMenu } from "grownupsavior/NavMenu";
+import { NavMenu } from "fadedgold/NavMenu";
 import { Route, Routes } from "react-router-dom";
-import { SWD2E } from "grownupsavior/games/swd2e/SWD2E";
-import { SWD3E } from "grownupsavior/games/swd3e/SWD3E";
+import { SWD2E } from "fadedgold/games/swd2e/SWD2E";
+import { SWD3E } from "fadedgold/games/swd3e/SWD3E";
 
 const themedMediumStackTokens: IStackTokens = {
   childrenGap: "m",

@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen } from "grownupsavior/test-utils";
-import App from "grownupsavior/App";
+import { render, screen } from "fadedgold/test-utils";
+import App from "fadedgold/App";
 
 test("renders 123", () => {
   render(<App />);
