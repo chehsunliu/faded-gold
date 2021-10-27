@@ -1,6 +1,8 @@
 import React from "react";
 import { INavLink, INavLinkGroup, INavStyles, Nav } from "@fluentui/react";
 import { useNavigate } from "react-router-dom";
+import { RoutingItems } from "fadedgold/routingConfig";
+import { useTranslation } from "react-i18next";
 
 const navStyles: Partial<INavStyles> = {
   root: {
@@ -10,37 +12,14 @@ const navStyles: Partial<INavStyles> = {
   },
 };
 
-const navGroups: INavLinkGroup[] = [
-  {
-    links: [
-      {
-        name: "Home",
-        url: "/",
-        key: "home",
-      },
-      {
-        name: "Games",
-        url: "#",
-        links: [
-          {
-            name: "SWD2E",
-            url: "/games/swd2e",
-            key: "swd2e",
-          },
-          {
-            name: "SWD3E",
-            url: "/games/swd3e",
-            key: "swd3e",
-          },
-        ],
-        isExpanded: true,
-      },
-    ],
-  },
-];
+interface SideBarProps {
+  routingItems: RoutingItems;
+}
 
-export const NavMenu = () => {
+export const SideBar = (props: SideBarProps) => {
+  const { routingItems } = props;
   const navigate = useNavigate();
+  const { t } = useTranslation("menu");
 
   const handleClick = (e?: React.MouseEvent<HTMLElement>, item?: INavLink) => {
     if (e === undefined || item === undefined) {
@@ -50,6 +29,14 @@ export const NavMenu = () => {
     e.preventDefault();
     navigate(item.url);
   };
+
+  const links: INavLink[] = Object.entries(routingItems).map(([key, item]) => ({
+    name: t(key),
+    url: item.url,
+    key: key,
+  }));
+
+  const navGroups: INavLinkGroup[] = [{ links: links }];
 
   return (
     <Nav groups={navGroups} styles={navStyles} onLinkClick={handleClick} />
