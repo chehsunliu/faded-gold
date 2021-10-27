@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { IStackTokens, Stack } from "@fluentui/react";
-import { SideBar } from "fadedgold/SideBar";
-import { Content } from "fadedgold/Content";
+import { SideBar } from "fadedgold/layout/SideBar";
+import { Content } from "fadedgold/layout/Content";
 import { routingItems } from "fadedgold/routingConfig";
 
 const themedMediumStackTokens: IStackTokens = {
