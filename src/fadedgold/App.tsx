@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { IStackItemStyles, IStackStyles, IStackTokens, Stack } from "@fluentui/react";
+import { IStackItemStyles, Stack } from "@fluentui/react";
 import { SideBar } from "fadedgold/layout/SideBar";
 import { Content } from "fadedgold/layout/Content";
 import { routingItems } from "fadedgold/routingConfig";
