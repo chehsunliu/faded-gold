@@ -1,6 +1,6 @@
 import { SWD3E } from "fadedgold/pages/swd3e";
 import React from "react";
-import { Home } from "fadedgold/pages/home";
+import { Home } from "fadedgold/pages/Home";
 
 export interface RoutingPageProps {
   title: string;

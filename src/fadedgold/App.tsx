@@ -1,28 +1,36 @@
 import React, { Suspense } from "react";
-import { IStackTokens, Stack } from "@fluentui/react";
+import { IStackItemStyles, IStackStyles, IStackTokens, Stack } from "@fluentui/react";
 import { SideBar } from "fadedgold/layout/SideBar";
 import { Content } from "fadedgold/layout/Content";
 import { routingItems } from "fadedgold/routingConfig";
 
-const themedMediumStackTokens: IStackTokens = {
-  childrenGap: "m",
-  padding: "m",
+const sidebarStackItemStyles: IStackItemStyles = {
+  root: {
+    padding: 10,
+  },
+};
+
+const contentStackItemStyles: IStackItemStyles = {
+  root: {
+    flexShrink: "unset",
+    padding: 10,
+  },
 };
 
 function App() {
   return (
     <>
       <Stack horizontal disableShrink>
-        <Stack tokens={themedMediumStackTokens}>
+        <Stack.Item styles={sidebarStackItemStyles}>
           <Suspense fallback={<div>Loading</div>}>
             <SideBar routingItems={routingItems} />
           </Suspense>
-        </Stack>
-        <Stack tokens={themedMediumStackTokens}>
+        </Stack.Item>
+        <Stack.Item styles={contentStackItemStyles}>
           <Suspense fallback={<div>Loading</div>}>
             <Content routingItems={routingItems} />
           </Suspense>
-        </Stack>
+        </Stack.Item>
       </Stack>
     </>
   );
