@@ -1,6 +1,7 @@
+import { SWD2E } from "fadedgold/pages/swd2e";
 import { SWD3E } from "fadedgold/pages/swd3e";
 import React from "react";
-import { Home } from "fadedgold/pages/home";
+import { Home } from "fadedgold/pages/Home";
 
 export interface RoutingPageProps {
   title: string;
@@ -20,7 +21,7 @@ export const routingItems: { [key: string]: RoutingItem } = {
   },
   swd2e: {
     url: "/games/swd2e",
-    pageType: SWD3E,
+    pageType: SWD2E,
   },
   swd3e: {
     url: "/games/swd3e",
