@@ -1,11 +1,8 @@
-import { RoutingPageProps } from "fadedgold/routingConfig";
-import { Heading1, Paragraph } from "fadedgold/component/text";
+import { Paragraph } from "fadedgold/component/text";
 
-export const Home = (props: RoutingPageProps) => {
-  const { title } = props;
+export const Home = () => {
   return (
     <>
-      <Heading1>{title}</Heading1>
       <Paragraph>
         Limited usage, use in places where text is mandatory and space is tight.
         For example, it is used for any disclaimer text that may appear in a

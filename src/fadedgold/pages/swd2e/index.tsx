@@ -1,11 +1,7 @@
-import { RoutingPageProps } from "fadedgold/routingConfig";
-import { Heading1 } from "fadedgold/component/text";
-
-export function SWD2E(props: RoutingPageProps) {
-  const { title } = props;
+export function SWD2E() {
   return (
     <>
-      <Heading1>{title}</Heading1>
+      <div>SWD2E</div>
     </>
   );
 }
