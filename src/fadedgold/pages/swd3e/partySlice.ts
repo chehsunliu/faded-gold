@@ -74,3 +74,4 @@ export const partySlice = createSlice({
 });
 
 export const { attributeUpdated } = partySlice.actions;
+export default partySlice.reducer;
