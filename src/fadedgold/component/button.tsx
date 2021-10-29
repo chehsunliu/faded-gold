@@ -3,6 +3,7 @@ import React from "react";
 
 interface ImportButtonProps {
   text: string;
+  onImport: (filename: string, buffer: ArrayBuffer) => any;
 }
 
 export const ImportButton = (props: ImportButtonProps) => {
@@ -27,20 +28,20 @@ export const ImportButton = (props: ImportButtonProps) => {
       const buffer = e.target.result;
       if (!(buffer instanceof ArrayBuffer)) {
         console.error("buffer is not an instance of ArrayBuffer");
-        return
+        return;
       }
 
-      console.log(buffer);
-    }
+      props.onImport(targetFile.name, buffer);
+    };
 
     reader.readAsArrayBuffer(targetFile);
-  }
+  };
 
   const handleClick = (e: any) => {
     if (fileUploadRef.current) {
       fileUploadRef.current.click();
     }
-  }
+  };
 
   return (
     <PrimaryButton text={text} onClick={handleClick} onChange={handleChange}>

@@ -4,10 +4,15 @@ import { ImportButton } from "fadedgold/component/button";
 
 export function SWD3E(props: RoutingPageProps) {
   const { title } = props;
+
+  const handleImport = (filename: string, buffer: ArrayBuffer) => {
+    console.log(filename, buffer);
+  };
+
   return (
     <>
       <Heading1>{title}</Heading1>
-      <ImportButton text={"Import"} />
+      <ImportButton text={"Import"} onImport={handleImport} />
     </>
   );
 }
