@@ -23,6 +23,8 @@ export interface Character {
   earthResistance: number;
 }
 
+type CharacterAttribute = keyof Character;
+
 const emptyCharacter: Character = {
   durability: 0,
   earthResistance: 0,
@@ -56,6 +58,7 @@ const initialState: Party = {
 
 interface CharacterPayload {
   id: CharacterId;
+  attribute: CharacterAttribute;
   value: number;
 }
 
@@ -63,65 +66,11 @@ export const partySlice = createSlice({
   name: "party",
   initialState,
   reducers: {
-    experienceUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].experience = action.payload.value;
-    },
-    healthUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].health = action.payload.value;
-    },
-    manaUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].mana = action.payload.value;
-    },
-    vitalityUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].vitality = action.payload.value;
-    },
-    maxHealthUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].maxHealth = action.payload.value;
-    },
-    maxManaUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].maxMana = action.payload.value;
-    },
-    maxVitalityUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].maxVitality = action.payload.value;
-    },
-    strengthUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].strength = action.payload.value;
-    },
-    durabilityUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].durability = action.payload.value;
-    },
-    intelligenceUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].intelligence = action.payload.value;
-    },
-    speedUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].speed = action.payload.value;
-    },
-    levelUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].level = action.payload.value;
-    },
-    metalResistanceUpdated: (
-      state,
-      action: PayloadAction<CharacterPayload>
-    ) => {
-      state[action.payload.id].metalResistance = action.payload.value;
-    },
-    woodResistanceUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].woodResistance = action.payload.value;
-    },
-    waterResistanceUpdated: (
-      state,
-      action: PayloadAction<CharacterPayload>
-    ) => {
-      state[action.payload.id].waterResistance = action.payload.value;
-    },
-    fireResistanceUpdated: (state, action: PayloadAction<CharacterPayload>) => {
-      state[action.payload.id].fireResistance = action.payload.value;
-    },
-    earthResistanceUpdated: (
-      state,
-      action: PayloadAction<CharacterPayload>
-    ) => {
-      state[action.payload.id].earthResistance = action.payload.value;
+    attributeUpdated: (state, action: PayloadAction<CharacterPayload>) => {
+      const { id, attribute, value } = action.payload;
+      state[id][attribute] = value;
     },
   },
 });
+
+export const { attributeUpdated } = partySlice.actions;
