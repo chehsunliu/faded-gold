@@ -2,6 +2,7 @@ import React, { FC, ReactElement } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { render, RenderOptions } from "@testing-library/react";
 import { setIconOptions } from "@fluentui/style-utilities";
+import "fadedgold/i18n";
 
 setIconOptions({
   disableWarnings: true,
