@@ -1,12 +1,13 @@
 import { CommandBar, ICommandBarItemProps } from "@fluentui/react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface BasiCommandBarProps {
   onUpload: (filename: string, buffer: ArrayBuffer) => any;
 }
 
 export const BasicCommandBar = (props: BasiCommandBarProps) => {
-  const uploadRef = React.createRef<HTMLInputElement>();
+  const { t } = useTranslation("translation", {keyPrefix: "commandBar"});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files === null) {
@@ -35,6 +36,8 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
     reader.readAsArrayBuffer(targetFile);
   };
 
+  const uploadRef = React.createRef<HTMLInputElement>();
+
   const handleClick = () => {
     if (uploadRef.current) {
       uploadRef.current.click();
@@ -44,7 +47,7 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
   const items: ICommandBarItemProps[] = [
     {
       key: "upload",
-      text: "Upload",
+      text: t("upload"),
       iconProps: { iconName: "Upload" },
       onClick: handleClick,
     },
@@ -61,7 +64,7 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
     },
     {
       key: "download",
-      text: "Download",
+      text: t("download"),
       iconProps: { iconName: "Download" },
     },
   ];
