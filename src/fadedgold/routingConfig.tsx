@@ -1,5 +1,5 @@
-import { SWDE } from "fadedgold/pages/swde";
-import { SWD3E } from "fadedgold/pages/swd3e";
+import { SWDE } from "fadedgold/pages/swde/SWDE";
+import { SWD3E } from "fadedgold/pages/swd3e/SWD3E";
 import { Home } from "fadedgold/pages/Home";
 import { ReactElement } from "react";
 
