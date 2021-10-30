@@ -1,0 +1,83 @@
+{
+  "game": {
+    "money": 174
+  },
+  "party": {
+    "chen": {
+      "experience": 61,
+      "health": 77,
+      "mana": 35,
+      "vitality": 20,
+      "maxHealth": 100,
+      "maxMana": 35,
+      "maxVitality": 20,
+      "strength": 8,
+      "durability": 6,
+      "intelligence": 10,
+      "speed": 24,
+      "level": 1,
+      "metalResistance": 0,
+      "woodResistance": 5,
+      "waterResistance": 0,
+      "fireResistance": 0,
+      "earthResistance": 0
+    },
+    "yu": {
+      "experience": 372,
+      "health": 344,
+      "mana": 203,
+      "vitality": 42,
+      "maxHealth": 344,
+      "maxMana": 203,
+      "maxVitality": 42,
+      "strength": 11,
+      "durability": 10,
+      "intelligence": 19,
+      "speed": 27,
+      "level": 4,
+      "metalResistance": 0,
+      "woodResistance": 0,
+      "waterResistance": 0,
+      "fireResistance": 0,
+      "earthResistance": 15
+    },
+    "tuoba": {
+      "experience": 3730,
+      "health": 1205,
+      "mana": 393,
+      "vitality": 339,
+      "maxHealth": 1205,
+      "maxMana": 393,
+      "maxVitality": 339,
+      "strength": 44,
+      "durability": 35,
+      "intelligence": 43,
+      "speed": 31,
+      "level": 13,
+      "metalResistance": 0,
+      "woodResistance": 0,
+      "waterResistance": 0,
+      "fireResistance": 15,
+      "earthResistance": 0
+    },
+    "chang": {
+      "experience": 2394,
+      "health": 836,
+      "mana": 172,
+      "vitality": 342,
+      "maxHealth": 836,
+      "maxMana": 172,
+      "maxVitality": 342,
+      "strength": 30,
+      "durability": 35,
+      "intelligence": 14,
+      "speed": 27,
+      "level": 8,
+      "metalResistance": 0,
+      "woodResistance": 0,
+      "waterResistance": 20,
+      "fireResistance": 0,
+      "earthResistance": 0
+    }
+  }
+}
