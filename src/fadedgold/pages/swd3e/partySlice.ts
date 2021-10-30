@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface Character {
+interface Character {
   experience: number;
 
   health: number;
@@ -47,9 +47,9 @@ const emptyCharacter: Character = {
 
 const characterIds = ["chen", "yu", "tuoba", "chang"] as const;
 type CharacterId = typeof characterIds[number];
-type Party = Record<CharacterId, Character>;
+type PartyState = Record<CharacterId, Character>;
 
-const initialState: Party = {
+const initialState: PartyState = {
   chen: { ...emptyCharacter },
   yu: { ...emptyCharacter },
   tuoba: { ...emptyCharacter },
