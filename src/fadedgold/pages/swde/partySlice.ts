@@ -41,7 +41,7 @@ interface CharacterPayload {
 }
 
 export const partySlice = createSlice({
-  name: "party",
+  name: "swde/party",
   initialState,
   reducers: {
     attributeUpdated: (state, action: PayloadAction<CharacterPayload>) => {

@@ -9,7 +9,7 @@ const initialState: GameState = {
 };
 
 export const gameSlice = createSlice({
-  name: "game",
+  name: "swd3e/game",
   initialState,
   reducers: {
     moneyUpdated: (state, action: PayloadAction<number>) => {
