@@ -1,6 +1,7 @@
 import { ImportButton } from "fadedgold/component/button";
+import React from "react";
 
-export function SWD3E() {
+export const SWD3E = () => {
   const handleImport = (filename: string, buffer: ArrayBuffer) => {
     console.log(filename, buffer);
   };
@@ -10,4 +11,4 @@ export function SWD3E() {
       <ImportButton text={"Import"} onImport={handleImport} />
     </>
   );
-}
+};

@@ -1,5 +1,5 @@
-import { SWD2E } from "fadedgold/pages/swd2e";
-import { SWD3E } from "fadedgold/pages/swd3e";
+import { SWDE } from "fadedgold/pages/swde/SWDE";
+import { SWD3E } from "fadedgold/pages/swd3e/SWD3E";
 import { Home } from "fadedgold/pages/Home";
 import { ReactElement } from "react";
 
@@ -15,9 +15,9 @@ export const routingItems: { [key: string]: RoutingItem } = {
     url: "/",
     element: () => <Home />,
   },
-  swd2e: {
-    url: "/games/swd2e",
-    element: () => <SWD2E />,
+  swde: {
+    url: "/games/swde",
+    element: () => <SWDE />,
   },
   swd3e: {
     url: "/games/swd3e",
