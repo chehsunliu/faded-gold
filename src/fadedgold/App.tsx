@@ -12,7 +12,6 @@ const sidebarStackItemStyles: IStackItemStyles = {
 
 const contentStackItemStyles: IStackItemStyles = {
   root: {
-    flexShrink: "unset",
     padding: 10,
   },
 };
@@ -20,7 +19,7 @@ const contentStackItemStyles: IStackItemStyles = {
 function App() {
   return (
     <>
-      <Stack horizontal disableShrink>
+      <Stack horizontal>
         <Stack.Item styles={sidebarStackItemStyles}>
           <Suspense fallback={<div>Loading</div>}>
             <SideBar routingItems={routingItems} />
