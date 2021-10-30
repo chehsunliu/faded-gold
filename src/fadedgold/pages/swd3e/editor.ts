@@ -1,7 +1,7 @@
 import { Character, PartyState } from "fadedgold/pages/swd3e/partySlice";
 import { GameState } from "fadedgold/pages/swd3e/gameSlice";
 
-interface Data {
+interface GameInfo {
   game: GameState;
   party: PartyState;
 }
@@ -69,7 +69,7 @@ const loadParty = (data: DataView): PartyState => {
   };
 };
 
-export const load = (buffer: ArrayBuffer): Data => {
+export const loadGameInfo = (buffer: ArrayBuffer): GameInfo => {
   const data = new DataView(buffer);
 
   return {

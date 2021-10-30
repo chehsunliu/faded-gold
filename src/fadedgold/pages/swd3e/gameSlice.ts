@@ -12,11 +12,14 @@ export const gameSlice = createSlice({
   name: "swd3e/game",
   initialState,
   reducers: {
+    replaced: (state, action: PayloadAction<GameState>) => {
+      return action.payload;
+    },
     moneyUpdated: (state, action: PayloadAction<number>) => {
       state.money = action.payload;
     },
   },
 });
 
-export const { moneyUpdated } = gameSlice.actions;
+export const actions = gameSlice.actions;
 export default gameSlice.reducer;

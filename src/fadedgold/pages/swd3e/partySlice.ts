@@ -66,6 +66,9 @@ export const partySlice = createSlice({
   name: "swd3e/party",
   initialState,
   reducers: {
+    replaced: (state, action: PayloadAction<PartyState>) => {
+      return action.payload;
+    },
     attributeUpdated: (state, action: PayloadAction<CharacterPayload>) => {
       const { id, attribute, value } = action.payload;
       state[id][attribute] = value;
@@ -73,5 +76,5 @@ export const partySlice = createSlice({
   },
 });
 
-export const { attributeUpdated } = partySlice.actions;
+export const actions = partySlice.actions;
 export default partySlice.reducer;
