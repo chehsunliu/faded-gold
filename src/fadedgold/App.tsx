@@ -18,20 +18,16 @@ const contentStackItemStyles: IStackItemStyles = {
 
 function App() {
   return (
-    <>
+    <Suspense fallback={<div>Loading</div>}>
       <Stack horizontal>
         <Stack.Item styles={sidebarStackItemStyles}>
-          <Suspense fallback={<div>Loading</div>}>
-            <SideBar routingItems={routingItems} />
-          </Suspense>
+          <SideBar routingItems={routingItems} />
         </Stack.Item>
         <Stack.Item styles={contentStackItemStyles}>
-          <Suspense fallback={<div>Loading</div>}>
-            <Content routingItems={routingItems} />
-          </Suspense>
+          <Content routingItems={routingItems} />
         </Stack.Item>
       </Stack>
-    </>
+    </Suspense>
   );
 }
 

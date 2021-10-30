@@ -19,7 +19,7 @@ interface SideBarProps {
 export const SideBar = (props: SideBarProps) => {
   const { routingItems } = props;
   const navigate = useNavigate();
-  const { t } = useTranslation("menu");
+  const { t } = useTranslation("translation", {keyPrefix: "menu"});
 
   const handleClick = (e?: React.MouseEvent<HTMLElement>, item?: INavLink) => {
     if (e === undefined || item === undefined) {
