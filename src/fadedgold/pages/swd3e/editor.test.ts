@@ -9,6 +9,6 @@ let expectedData = JSON.parse(
 );
 
 test("file loading should work", () => {
-  const data = editor.load(fileBuffer.buffer);
+  const data = editor.loadGameInfo(fileBuffer.buffer);
   expect(data).toEqual(expectedData);
 });
