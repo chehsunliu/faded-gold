@@ -12,27 +12,22 @@ const sidebarStackItemStyles: IStackItemStyles = {
 
 const contentStackItemStyles: IStackItemStyles = {
   root: {
-    flexShrink: "unset",
     padding: 10,
   },
 };
 
 function App() {
   return (
-    <>
-      <Stack horizontal disableShrink>
+    <Suspense fallback={<div>Loading</div>}>
+      <Stack horizontal>
         <Stack.Item styles={sidebarStackItemStyles}>
-          <Suspense fallback={<div>Loading</div>}>
-            <SideBar routingItems={routingItems} />
-          </Suspense>
+          <SideBar routingItems={routingItems} />
         </Stack.Item>
         <Stack.Item styles={contentStackItemStyles}>
-          <Suspense fallback={<div>Loading</div>}>
-            <Content routingItems={routingItems} />
-          </Suspense>
+          <Content routingItems={routingItems} />
         </Stack.Item>
       </Stack>
-    </>
+    </Suspense>
   );
 }
 
