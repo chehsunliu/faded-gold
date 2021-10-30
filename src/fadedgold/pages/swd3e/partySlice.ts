@@ -45,7 +45,7 @@ const emptyCharacter: Character = {
   woodResistance: 0,
 };
 
-export const characterIds = ["chen", "yu", "tuoba", "chang"] as const;
+const characterIds = ["chen", "yu", "tuoba", "chang"] as const;
 type CharacterId = typeof characterIds[number];
 export type PartyState = Record<CharacterId, Character>;
 
