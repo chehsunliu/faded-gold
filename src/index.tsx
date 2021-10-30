@@ -5,14 +5,18 @@ import reportWebVitals from "./reportWebVitals";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
 import { BrowserRouter } from "react-router-dom";
 import "fadedgold/i18n";
+import { store } from "fadedgold/redux/store";
+import { Provider } from "react-redux";
 
 initializeIcons();
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
