@@ -6,6 +6,7 @@ import { actions as metaActions } from "fadedgold/pages/swd3e/metaSlice";
 import { actions as partyActions } from "fadedgold/pages/swd3e/partySlice";
 import { BasicCommandBar } from "fadedgold/component/BasicCommandBar";
 import { base64EncodeBuffer } from "fadedgold/util";
+import { Heading2 } from "fadedgold/component/text";
 
 export const SWD3E = () => {
   const dispatch = useAppDispatch();
@@ -25,6 +26,7 @@ export const SWD3E = () => {
   return (
     <>
       <BasicCommandBar onUpload={handleUpload} downloadDisabled={filename === null} />
+      <Heading2>角色</Heading2>
     </>
   );
 };

@@ -1,6 +1,10 @@
 import { ITextProps, Text } from "@fluentui/react";
 
 export const Heading1 = (props: ITextProps) => {
+  return <Text {...props} variant={"mega"} block />;
+};
+
+export const Heading2 = (props: ITextProps) => {
   return <Text {...props} variant={"xxLarge"} block />;
 };
 
