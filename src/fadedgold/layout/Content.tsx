@@ -20,7 +20,7 @@ const stackStyles: IStackStyles = {
 
 export const Content = (props: ContentProps) => {
   const { routingItems } = props;
-  const { t } = useTranslation("translation", {keyPrefix: "menu"});
+  const { t } = useTranslation("translation", { keyPrefix: "menu" });
 
   const routes = Object.entries(routingItems).map(([key, item]) => {
     const element = (
