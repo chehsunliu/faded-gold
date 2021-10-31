@@ -77,3 +77,7 @@ export const loadGameInfo = (buffer: ArrayBuffer): GameInfo => {
     party: loadParty(data),
   };
 };
+
+export const overwriteGameInfo = (buffer: ArrayBuffer, info: GameInfo) => {
+
+}
