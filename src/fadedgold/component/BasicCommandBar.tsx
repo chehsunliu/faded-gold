@@ -4,12 +4,12 @@ import { useTranslation } from "react-i18next";
 
 interface BasiCommandBarProps {
   onUpload: (filename: string, buffer: ArrayBuffer) => any;
+  uploadDisabled?: boolean;
+  downloadDisabled?: boolean;
 }
 
-export const BasicCommandBar = (props: BasiCommandBarProps) => {
-  const { t } = useTranslation("translation", {keyPrefix: "commandBar"});
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+const handleChange =
+  (props: BasiCommandBarProps) => (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files === null) {
       console.error("event.target.files is null");
       return;
@@ -36,6 +36,9 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
     reader.readAsArrayBuffer(targetFile);
   };
 
+export const BasicCommandBar = (props: BasiCommandBarProps) => {
+  const { t } = useTranslation("translation", { keyPrefix: "commandBar" });
+  const { uploadDisabled, downloadDisabled } = props;
   const uploadRef = React.createRef<HTMLInputElement>();
 
   const handleClick = () => {
@@ -49,6 +52,7 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
       key: "upload",
       text: t("upload"),
       iconProps: { iconName: "Upload" },
+      disabled: uploadDisabled,
       onClick: handleClick,
     },
     {
@@ -58,7 +62,7 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
           ref={uploadRef}
           style={{ display: "none" }}
           type="file"
-          onChange={handleChange}
+          onChange={handleChange(props)}
         />
       ),
     },
@@ -66,6 +70,7 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
       key: "download",
       text: t("download"),
       iconProps: { iconName: "Download" },
+      disabled: downloadDisabled,
     },
   ];
 
