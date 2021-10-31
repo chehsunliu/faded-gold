@@ -15,7 +15,9 @@ export const Card = (props: CardProps) => {
     padding: "20px",
     borderWidth: "2px",
     borderStyle: "solid",
-    borderColor: isMouseInside ? palette.themePrimary : palette.themeLighterAlt,
+    borderColor: isMouseInside
+      ? palette.themePrimary
+      : palette.neutralQuaternary,
   };
 
   const handleMouseEnter = () => {
