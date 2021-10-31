@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 
 interface BasiCommandBarProps {
   onUpload: (filename: string, buffer: ArrayBuffer) => any;
+  uploadDisabled?: boolean;
+  downloadDisabled?: boolean;
 }
 
 const handleChange =
@@ -36,6 +38,7 @@ const handleChange =
 
 export const BasicCommandBar = (props: BasiCommandBarProps) => {
   const { t } = useTranslation("translation", { keyPrefix: "commandBar" });
+  const { uploadDisabled, downloadDisabled } = props;
   const uploadRef = React.createRef<HTMLInputElement>();
 
   const handleClick = () => {
@@ -49,6 +52,7 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
       key: "upload",
       text: t("upload"),
       iconProps: { iconName: "Upload" },
+      disabled: uploadDisabled,
       onClick: handleClick,
     },
     {
@@ -66,6 +70,7 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
       key: "download",
       text: t("download"),
       iconProps: { iconName: "Download" },
+      disabled: downloadDisabled,
     },
   ];
 
