@@ -21,7 +21,7 @@ export const NumericTextField = (props: NumericTextFieldProps) => {
   };
 
   const onChangeWrapped = (newValue: number) => {
-    const maxV = maxValue !== undefined ? maxValue : 65535
+    const maxV = maxValue !== undefined ? maxValue : 65535;
     if (newValue >= 0 && newValue <= maxV) {
       onChange(newValue);
     }
