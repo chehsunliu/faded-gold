@@ -7,15 +7,19 @@ import { BrowserRouter } from "react-router-dom";
 import "fadedgold/i18n";
 import { store } from "fadedgold/redux/store";
 import { Provider } from "react-redux";
+import { ThemeProvider } from "@fluentui/react";
+import { theme } from "fadedgold/theme";
 
 initializeIcons();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
