@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "home": "主頁",
+    "swde": "軒轅劍外傳－楓之舞",
+    "swd3e": "軒轅劍參外傳－天之痕"
+  },
+  "commandBar": {
+    "upload": "上傳",
+    "download": "下載"
+  }
+}
