@@ -2,5 +2,8 @@
   "game": {
     "title": "遊戲進度",
     "money": "金錢"
+  },
+  "party": {
+    "title": "隊伍"
   }
 }

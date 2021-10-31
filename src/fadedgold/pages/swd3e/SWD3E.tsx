@@ -7,6 +7,7 @@ import { actions as partyActions } from "fadedgold/pages/swd3e/partySlice";
 import { BasicCommandBar } from "fadedgold/component/BasicCommandBar";
 import { base64EncodeBuffer } from "fadedgold/util";
 import { GameProgress } from "fadedgold/pages/swd3e/GameProgress";
+import { Party } from "fadedgold/pages/swd3e/Party";
 
 export const SWD3E = () => {
   const dispatch = useAppDispatch();
@@ -30,6 +31,7 @@ export const SWD3E = () => {
         downloadDisabled={filename === null}
       />
       <GameProgress />
+      <Party />
     </>
   );
 };
