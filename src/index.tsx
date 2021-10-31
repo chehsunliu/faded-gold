@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "fadedgold/App";
 import reportWebVitals from "./reportWebVitals";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import "fadedgold/i18n";
 import { store } from "fadedgold/redux/store";
 import { Provider } from "react-redux";
@@ -16,9 +16,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
+        <Router>
           <App />
-        </BrowserRouter>
+        </Router>
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,
