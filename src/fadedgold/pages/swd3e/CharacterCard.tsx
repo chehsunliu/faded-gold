@@ -8,13 +8,14 @@ import { Heading3 } from "fadedgold/component/text";
 import { useTranslation } from "react-i18next";
 import { NumericTextField } from "fadedgold/component/NumericTextField";
 import { IStackTokens, Stack } from "@fluentui/react";
+import { Card } from "fadedgold/component/Card";
 
 interface CharacterCardProps {
   id: CharacterId;
 }
 
 const statesStackTokens: IStackTokens = {
-  childrenGap: 10,
+  childrenGap: 5,
 };
 
 export const CharacterCard = (props: CharacterCardProps) => {
@@ -40,11 +41,11 @@ export const CharacterCard = (props: CharacterCardProps) => {
     { attr: "durability", maxValue: 0xffff },
     { attr: "intelligence", maxValue: 0xffff },
     { attr: "speed", maxValue: 0xffff },
-    { attr: "metalResistance", maxValue: 0xff, width: 60 },
-    { attr: "woodResistance", maxValue: 0xff, width: 60 },
-    { attr: "waterResistance", maxValue: 0xff, width: 60 },
-    { attr: "fireResistance", maxValue: 0xff, width: 60 },
-    { attr: "earthResistance", maxValue: 0xff, width: 60 },
+    { attr: "metalResistance", maxValue: 0xff, width: 65 },
+    { attr: "woodResistance", maxValue: 0xff, width: 65 },
+    { attr: "waterResistance", maxValue: 0xff, width: 65 },
+    { attr: "fireResistance", maxValue: 0xff, width: 65 },
+    { attr: "earthResistance", maxValue: 0xff, width: 65 },
   ];
 
   const renderedItems = items.map((item) => (
@@ -61,11 +62,16 @@ export const CharacterCard = (props: CharacterCardProps) => {
   ));
 
   return (
-    <div style={{ width: 400 }}>
+    <Card width={350}>
       <Heading3>{t(`names.${id}`)}</Heading3>
-      <Stack tokens={statesStackTokens} horizontalAlign="space-between" horizontal wrap>
+      <Stack
+        tokens={statesStackTokens}
+        horizontalAlign="center"
+        horizontal
+        wrap
+      >
         {renderedItems}
       </Stack>
-    </div>
+    </Card>
   );
 };
