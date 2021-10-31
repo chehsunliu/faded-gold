@@ -1,6 +1,8 @@
 import { Character, PartyState } from "fadedgold/pages/swd3e/partySlice";
 import { GameState } from "fadedgold/pages/swd3e/gameSlice";
 
+const MONEY_ADDRESS = 0x128fe;
+
 const EXPERIENCE_ADDRESS = 0x129fe;
 
 const HEALTH_ADDRESS = EXPERIENCE_ADDRESS + 4;
@@ -28,8 +30,6 @@ interface GameInfo {
 }
 
 const loadGame = (data: DataView): GameState => {
-  const MONEY_ADDRESS = 0x128fe;
-
   return {
     money: data.getUint32(MONEY_ADDRESS, true),
   };
