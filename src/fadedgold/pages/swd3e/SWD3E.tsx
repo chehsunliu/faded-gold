@@ -5,7 +5,7 @@ import { actions as gameActions } from "fadedgold/pages/swd3e/gameSlice";
 import { actions as metaActions } from "fadedgold/pages/swd3e/metaSlice";
 import { actions as partyActions } from "fadedgold/pages/swd3e/partySlice";
 import { BasicCommandBar } from "fadedgold/component/BasicCommandBar";
-import { base64EncodeBuffer } from "fadedgold/util";
+import { base64DecodeBuffer, base64EncodeBuffer } from "fadedgold/util";
 import { GameProgress } from "fadedgold/pages/swd3e/GameProgress";
 import { Party } from "fadedgold/pages/swd3e/Party";
 
@@ -32,19 +32,13 @@ export const SWD3E = () => {
       return;
     }
 
-    const b64Blob = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if (b64Blob === null) {
+    const b64 = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (b64 === null) {
       console.error("b64 blob is null");
       return;
     }
 
-    const byteArrayBlob = Uint8Array.from(
-      atob(b64Blob)
-        .split("")
-        .map((c) => c.charCodeAt(0))
-    );
-
-    const buffer = byteArrayBlob.buffer;
+    const buffer = base64DecodeBuffer(b64);
     if (buffer === null) {
       console.error("buffer is null");
     }

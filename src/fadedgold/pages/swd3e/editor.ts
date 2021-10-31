@@ -78,6 +78,4 @@ export const loadGameInfo = (buffer: ArrayBuffer): GameInfo => {
   };
 };
 
-export const overwriteGameInfo = (buffer: ArrayBuffer, info: GameInfo) => {
-
-}
+export const overwriteGameInfo = (buffer: ArrayBuffer, info: GameInfo) => {};
