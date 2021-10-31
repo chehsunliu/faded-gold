@@ -78,4 +78,47 @@ export const loadGameInfo = (buffer: ArrayBuffer): GameInfo => {
   };
 };
 
-export const overwriteGameInfo = (buffer: ArrayBuffer, info: GameInfo) => {};
+const overwriteGame = (data: DataView, game: GameState) => {
+  data.setUint32(MONEY_ADDRESS, game.money, true);
+};
+
+const overwriteCharacter = (
+  data: DataView,
+  offset: number,
+  stats: Character
+) => {
+  data.setUint32(EXPERIENCE_ADDRESS + offset, stats.experience, true);
+
+  data.setUint16(HEALTH_ADDRESS + offset, stats.health, true);
+  data.setUint16(MANA_ADDRESS + offset, stats.mana, true);
+  data.setUint16(VITALITY_ADDRESS + offset, stats.vitality, true);
+  data.setUint16(MAX_HEALTH_ADDRESS + offset, stats.maxHealth, true);
+  data.setUint16(MAX_MANA_ADDRESS + offset, stats.maxMana, true);
+  data.setUint16(MAX_VITALITY_ADDRESS + offset, stats.maxVitality, true);
+
+  data.setUint16(STRENGTH_ADDRESS + offset, stats.strength, true);
+  data.setUint16(DURABILITY_ADDRESS + offset, stats.durability, true);
+  data.setUint16(INTELLIGENCE_ADDRESS + offset, stats.intelligence, true);
+  data.setUint16(SPEED_ADDRESS + offset, stats.speed, true);
+
+  data.setUint8(LEVEL_ADDRESS + offset, stats.level);
+  data.setUint8(METAL_RESISTANCE_ADDRESS + offset, stats.metalResistance);
+  data.setUint8(WOOD_RESISTANCE_ADDRESS + offset, stats.woodResistance);
+  data.setUint8(WATER_RESISTANCE_ADDRESS + offset, stats.waterResistance);
+  data.setUint8(FIRE_RESISTANCE_ADDRESS + offset, stats.fireResistance);
+  data.setUint8(EARTH_RESISTANCE_ADDRESS + offset, stats.earthResistance);
+};
+
+const overwriteParty = (data: DataView, party: PartyState) => {
+  overwriteCharacter(data, 0, party.chen);
+  overwriteCharacter(data, 0x3c, party.yu);
+  overwriteCharacter(data, 0x3c * 2, party.tuoba);
+  overwriteCharacter(data, 0x3c * 3, party.chang);
+};
+
+export const overwriteGameInfo = (buffer: ArrayBuffer, info: GameInfo) => {
+  const data = new DataView(buffer);
+
+  overwriteGame(data, info.game);
+  overwriteParty(data, info.party);
+};
