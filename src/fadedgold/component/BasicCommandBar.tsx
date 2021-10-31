@@ -6,10 +6,8 @@ interface BasiCommandBarProps {
   onUpload: (filename: string, buffer: ArrayBuffer) => any;
 }
 
-export const BasicCommandBar = (props: BasiCommandBarProps) => {
-  const { t } = useTranslation("translation", {keyPrefix: "commandBar"});
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+const handleChange =
+  (props: BasiCommandBarProps) => (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files === null) {
       console.error("event.target.files is null");
       return;
@@ -36,6 +34,8 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
     reader.readAsArrayBuffer(targetFile);
   };
 
+export const BasicCommandBar = (props: BasiCommandBarProps) => {
+  const { t } = useTranslation("translation", { keyPrefix: "commandBar" });
   const uploadRef = React.createRef<HTMLInputElement>();
 
   const handleClick = () => {
@@ -58,7 +58,7 @@ export const BasicCommandBar = (props: BasiCommandBarProps) => {
           ref={uploadRef}
           style={{ display: "none" }}
           type="file"
-          onChange={handleChange}
+          onChange={handleChange(props)}
         />
       ),
     },

@@ -3,7 +3,7 @@ import * as editor from "fadedgold/pages/swd3e/editor";
 import { useAppDispatch } from "fadedgold/redux/hook";
 import { actions as gameActions } from "fadedgold/pages/swd3e/gameSlice";
 import { actions as partyActions } from "fadedgold/pages/swd3e/partySlice";
-import { BasicCommandBar } from "fadedgold/component/commandBar";
+import { BasicCommandBar } from "fadedgold/component/BasicCommandBar";
 
 export const SWD3E = () => {
   const dispatch = useAppDispatch();
