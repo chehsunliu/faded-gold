@@ -6,10 +6,12 @@ import { actions as metaActions } from "fadedgold/pages/swd3e/metaSlice";
 import { actions as partyActions } from "fadedgold/pages/swd3e/partySlice";
 import { BasicCommandBar } from "fadedgold/component/BasicCommandBar";
 import { base64EncodeBuffer } from "fadedgold/util";
+import { GameProgress } from "fadedgold/pages/swd3e/GameProgress";
+import { Party } from "fadedgold/pages/swd3e/Party";
 
 export const SWD3E = () => {
   const dispatch = useAppDispatch();
-  const { filename } = useAppSelector(state => state.swd3e.meta)
+  const { filename } = useAppSelector((state) => state.swd3e.meta);
 
   const handleUpload = (filename: string, buffer: ArrayBuffer) => {
     const info = editor.loadGameInfo(buffer);
@@ -24,7 +26,12 @@ export const SWD3E = () => {
 
   return (
     <>
-      <BasicCommandBar onUpload={handleUpload} downloadDisabled={filename === null} />
+      <BasicCommandBar
+        onUpload={handleUpload}
+        downloadDisabled={filename === null}
+      />
+      <GameProgress />
+      <Party />
     </>
   );
 };

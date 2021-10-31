@@ -5,7 +5,7 @@ export interface MetaState {
 }
 
 const initialState: MetaState = {
-  filename: null
+  filename: null,
 };
 
 export const metaSlice = createSlice({

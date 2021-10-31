@@ -23,7 +23,7 @@ export interface Character {
   earthResistance: number;
 }
 
-type CharacterAttribute = keyof Character;
+export type CharacterAttribute = keyof Character;
 
 const emptyCharacter: Character = {
   durability: 0,
@@ -46,7 +46,7 @@ const emptyCharacter: Character = {
 };
 
 const characterIds = ["chen", "yu", "tuoba", "chang"] as const;
-type CharacterId = typeof characterIds[number];
+export type CharacterId = typeof characterIds[number];
 export type PartyState = Record<CharacterId, Character>;
 
 const initialState: PartyState = {
