@@ -1,5 +1,5 @@
 import { RoutingItems } from "fadedgold/routingConfig";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Heading1 } from "fadedgold/component/text";
 import { IStackStyles, IStackTokens, Stack } from "@fluentui/react";
@@ -22,6 +22,10 @@ export const Content = (props: ContentProps) => {
   const { routingItems } = props;
   const { t } = useTranslation("translation", { keyPrefix: "menu" });
 
+  const defaultRoutes = [
+    <Route key="home" path="/" element={<Navigate to="/games/swd3e" />} />,
+  ];
+
   const routes = Object.entries(routingItems).map(([key, item]) => {
     const element = (
       <Stack tokens={stackTokens} styles={stackStyles}>
@@ -32,5 +36,5 @@ export const Content = (props: ContentProps) => {
     return <Route key={key} path={item.url} element={element} />;
   });
 
-  return <Routes>{routes}</Routes>;
+  return <Routes>{defaultRoutes.concat(routes)}</Routes>;
 };
