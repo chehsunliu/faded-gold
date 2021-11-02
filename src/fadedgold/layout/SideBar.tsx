@@ -39,6 +39,11 @@ export const SideBar = (props: SideBarProps) => {
   const navGroups: INavLinkGroup[] = [{ links: links }];
 
   return (
-    <Nav groups={navGroups} styles={navStyles} onLinkClick={handleClick} />
+    <Nav
+      selectedKey=""
+      groups={navGroups}
+      styles={navStyles}
+      onLinkClick={handleClick}
+    />
   );
 };
