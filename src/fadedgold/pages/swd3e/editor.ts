@@ -87,6 +87,9 @@ export const loadGameInfo = (buffer: ArrayBuffer): GameInfo => {
 
 const overwriteGame = (data: DataView, game: GameState) => {
   data.setUint32(MONEY_ADDRESS, game.money, true);
+  data.setUint32(SCENE_ADDRESS, game.scene, true);
+  data.setUint32(X_ADDRESS, game.x, true);
+  data.setUint32(Y_ADDRESS, game.y, true);
 };
 
 const overwriteCharacter = (
