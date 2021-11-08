@@ -1,6 +1,9 @@
 {
   "game": {
-    "money": 174
+    "money": 174,
+    "scene": 10,
+    "x": 87,
+    "y": 7
   },
   "party": {
     "chen": {
