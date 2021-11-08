@@ -1,4 +1,4 @@
-name: ci
+name: release-stg
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build-and-test:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -31,14 +31,13 @@ jobs:
       - name: Show yarn version
         run: yarn --version
 
-      - name: Install dependencies
-        run: yarn install
+      - name: Install and build
+        run: |
+          yarn install
+          yarn build
 
-      - name: Build
-        run: yarn build
-
-      - name: Run linter
-        run: yarn lint
-
-      - name: Run tests
-        run: yarn test --coverage
+      - uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: build
+          target-folder: stg

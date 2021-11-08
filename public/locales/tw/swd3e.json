@@ -1,7 +1,8 @@
 {
   "game": {
     "title": "遊戲進度",
-    "money": "金錢"
+    "money": "金錢",
+    "scene": "場景"
   },
   "party": {
     "title": "隊伍",
