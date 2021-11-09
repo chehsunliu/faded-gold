@@ -1,0 +1,35 @@
+{
+  "game": {
+    "title": "遊戲進度",
+    "money": "金錢",
+    "scene": "場景"
+  },
+  "party": {
+    "title": "隊伍",
+    "names": {
+      "chen": "陳靖仇",
+      "yu": "于小雪",
+      "tuoba": "拓跋玉兒",
+      "chang": "張烈"
+    },
+    "states": {
+      "experience": "經驗值",
+      "health": "生命",
+      "mana": "靈力",
+      "vitality": "體力",
+      "maxHealth": "最大生命",
+      "maxMana": "最大靈力",
+      "maxVitality": "最大體力",
+      "strength": "力量",
+      "durability": "耐力",
+      "intelligence": "智慧",
+      "speed": "敏捷",
+      "level": "等級",
+      "metalResistance": "金象抗性",
+      "woodResistance": "木象抗性",
+      "waterResistance": "水象抗性",
+      "fireResistance": "火象抗性",
+      "earthResistance": "土象抗性"
+    }
+  }
+}
